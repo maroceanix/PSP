@@ -21,12 +21,16 @@ public class Cuenta {
 		}else {
 			mayor=true;
 		}
+		
 		return mayor;
 	}
 	public void retirar(double cantidad) {
 		if(this.comprobarSaldoMayor(cantidad)) {
 			this.saldo-=cantidad;
-		}
+		}else {
+			System.err.println("Saldo insuficiente");
+			System.exit(0);
+;		}
 		
 	}
 }

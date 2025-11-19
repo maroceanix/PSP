@@ -21,7 +21,9 @@ public class Cliente extends Thread{
 					this.cuenta.retirar(cantidad);
 					this.total+=cantidad;
 					this.sleep(50);
-					System.out.println(this.nombre+ " acaba de retirar "+this.cantidad+" y ahora quedan en la cuenta "+this.cuenta.devolver_saldo()+"€");
+					System.out.println(this.nombre+ " acaba de retirar "+this.cantidad+" y ahora quedan en la cuenta "+this.cuenta.devolver_saldo()+"€.\n"
+							+ "En físico tiene "+this.total+"\n");
+					
 					cuenta.notify();
 					cuenta.wait();
 				} catch (InterruptedException e) {
